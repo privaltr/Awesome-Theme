@@ -10,8 +10,9 @@ Table of contents
    * [Table of contents](#table-of-contents)
    * [Programs](#programs)
       * [Required](#required)
-      * [Trays](#trays)
       * [Personal favorites](#personal-favorites)
+   * [Top pannel](#top-pannel)
+      * [Trays](#trays)
    * [AUR Helper](#aur-helper)
    * [Lockscreen](#lockscreen)
    * [Dolphin icons missing](#dolphin-icons-missing)
@@ -41,7 +42,7 @@ Top Pannel
 
 
 Trays
-=====
+-----
 
 | Packages |Discription|
 |---|---|
