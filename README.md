@@ -12,9 +12,6 @@ Table of contents
 <!--ts-->
    * [Intro](#personal-awesomewm-config-and-rice)
    * [Table of contents](#table-of-contents)
-   * [Programs](#programs)
-      * [Required](#required)
-      * [Personal favorites](#personal-favorites)
    * [Top pannel](#top-pannel)
       * [Trays](#trays)
    * [AUR Helper](#aur-helper)
@@ -26,7 +23,8 @@ Table of contents
 
 ### 1) Get all the dependencies
 - [AwesomeWM](https://awesomewm.org/) as the window manager
-- [Roboto](https://fonts.google.com/specimen/Roboto) as the **font**
+- [ttf-dejavu](https://dejavu-fonts.github.io/) as the **font**
+- [nerd-fonts-complete](https://github.com/ryanoasis/nerd-fonts) as secondary font
 - [Rofi](https://github.com/DaveDavenport/rofi) for the app launcher
 - (Optional) [lxappearance](https://sourceforge.net/projects/lxde/files/LXAppearance/) to set up the gtk and icon theme
 
@@ -38,15 +36,6 @@ git clone https://github.com/RJMVisser/Arch-Rice.git ~/.config/awesome
 
 ### 3) Set the themes
 Start **lxappearance** to active the **icon** theme and **GTK** theme
-
-Programs
-========
-
-Required
---------
-
-Personal favorites
-------------------
 
 
 Top Pannel
