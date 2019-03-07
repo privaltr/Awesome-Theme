@@ -27,7 +27,7 @@ Trays
 -----
 | Packages |Discription|
 |---|---|
-|birdtray|Thunderbird with a system tray icon.|
+|[birdtray](https://github.com/gyunaev/birdtray)|Thunderbird with a system tray icon.|
 |kdeconnect|Adds communication between KDE and your smartphone.|
 |simplescreenrecorder|A feature-rich screen recorder that supports X11 and OpenGL.|
 |xfce4-power-manager|Power manager for Xfce desktop.|
