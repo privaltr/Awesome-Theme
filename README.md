@@ -24,6 +24,9 @@ Required
 Personal favorites
 ------------------
 
+AUR Helper
+==========
+[**Y**et **A**nother **Y**ogurt](https://github.com/Jguer/yay)
 
 Lockscreen
 ==========
