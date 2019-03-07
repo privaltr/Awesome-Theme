@@ -1,3 +1,1 @@
-<p align="center">
-  ![Alt Text](rice.gif)
-</p>    
+![Alt Text](rice.gif)
