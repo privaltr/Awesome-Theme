@@ -11,6 +11,7 @@ Table of contents
    * [Programs](#programs)
       * [Required](#required)
       * [Personal favorites](#personal-favorites)
+   * [AUR Helper](#aur-helper)
    * [Lockscreen](#lockscreen)
    * [Dolphin icons missing](#dolphin-icons-missing)
 <!--te-->
@@ -26,7 +27,14 @@ Personal favorites
 
 AUR Helper
 ==========
-[**Y**et **A**nother **Y**ogurt](https://github.com/Jguer/yay)
+[**Y**et **A**nother **Y**ogurt](https://github.com/Jguer/yay) - An AUR Helper Written in Go
+```
+git clone https://aur.archlinux.org/yay.git
+cd yay
+makepkg -si
+```
+> yay does its job, but [aurutils](https://github.com/AladW/aurutils) gives you absolute control over everything and more flexibility.
+
 
 Lockscreen
 ==========
