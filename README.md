@@ -34,11 +34,11 @@ Top Pannel
 
 
 <p align="center">
-<img src="https://placehold.it/15/fb5700/000000?text=+"> Layout indicator <br />
+<img src="https://placehold.it/15/fb5700/000000?text=+"> Layout indicator
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<img src="https://placehold.it/15/00fb02/000000?text=+"> Workspace indicator <br />
+<img src="https://placehold.it/15/00fb02/000000?text=+"> Workspace indicator
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<img src="https://placehold.it/15/fb0000/000000?text=+"> Trays <br />
+<img src="https://placehold.it/15/fb0000/000000?text=+"> Trays
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <img src="https://placehold.it/15/fbf100/000000?text=+"> Tray counter and show/hide button for trays 
 </p>
