@@ -27,7 +27,8 @@ Top Pannel
 ==========
 ![Screenshot of top pannel](toppannel.png)
 
-- ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `#f03c15`
+- ![#fb5700](https://placehold.it/15/fb5700/000000?text=+) `Layout indicator`
+- ![#00fb02](https://placehold.it/15/00fb02/000000?text=+) `Workspace indicator`
 
 Trays
 =====
