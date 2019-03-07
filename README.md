@@ -11,6 +11,7 @@ Table of contents
    * [Programs](#programs)
       * [Required](#required)
       * [Personal favorites](#personal-favorites)
+   * [Lockscreen](#lockscreen)
    * [Dolphin icons missing](#dolphin-icons-missing)
 <!--te-->
 
@@ -24,7 +25,12 @@ Personal favorites
 ------------------
 
 
-
+Lockscreen
+==========
+[i3lock-fancy](https://github.com/meskarune/i3lock-fancy) is an i3lock bash script that takes a screenshot of the desktop, blurs the background and adds a lock icon and text.
+```
+sudo yay -Sy i3lock-color-git i3lock-fancy-dualmonitors-git
+```
 
 
 Dolphin icons missing
