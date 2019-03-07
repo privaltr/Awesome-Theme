@@ -30,6 +30,15 @@ Table of contents
 - [Rofi](https://github.com/DaveDavenport/rofi) for the app launcher
 - (Optional) [lxappearance](https://sourceforge.net/projects/lxde/files/LXAppearance/) to set up the gtk and icon theme
 
+### 2) Clone the configuration
+
+```
+git clone https://github.com/RJMVisser/Arch-Rice.git ~/.config/awesome
+```
+
+### 3) Set the themes
+Start **lxappearance** to active the **icon** theme and **GTK** theme
+
 Programs
 ========
 
