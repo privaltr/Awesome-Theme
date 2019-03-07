@@ -25,7 +25,6 @@ Required
 
 Top Pannel
 ==========
-![Screenshot of top pannel](toppannel.png)
 
 ![#fb5700](https://placehold.it/15/fb5700/000000?text=+) Layout indicator
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
