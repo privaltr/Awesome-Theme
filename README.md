@@ -22,11 +22,9 @@ Table of contents
    * [Dolphin icons missing](#dolphin-icons-missing)
 <!--te-->
 
-Installation
-============
+## Installation
 
-1) Get all the dependencies
----------------------------
+### 1) Get all the dependencies
 - [AwesomeWM](https://awesomewm.org/) as the window manager
 - [Roboto](https://fonts.google.com/specimen/Roboto) as the **font**
 - [Rofi](https://github.com/DaveDavenport/rofi) for the app launcher
