@@ -3,7 +3,7 @@ Personal AwesomeWM config and Rice
 
 ![Preview gif](rice.gif?raw=true)
 
-| Tiled         | Panel         | Exit screen   |
+| Tiled         | Rofi         | Exit screen   |
 |:-------------:|:-------------:|:-------------:|
 |![](tiled.png)|![](rofi.png)|![](exitscreen.png)|
     
