@@ -25,6 +25,9 @@ Required
 
 Trays
 -----
+| Packages ---|Discription---|
+|-------------|---|
+|birdtray---|Thunderbird with a system tray icon.---|
 
 Personal favorites
 ------------------
