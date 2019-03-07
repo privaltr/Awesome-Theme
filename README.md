@@ -10,6 +10,7 @@ Table of contents
    * [Table of contents](#table-of-contents)
    * [Programs](#programs)
       * [Required](#required)
+      * [Trays](#trays)
       * [Personal favorites](#personal-favorites)
    * [AUR Helper](#aur-helper)
    * [Lockscreen](#lockscreen)
@@ -21,6 +22,9 @@ Programs
 
 Required
 --------
+
+Trays
+-----
 
 Personal favorites
 ------------------
