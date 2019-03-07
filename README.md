@@ -25,6 +25,7 @@ Required
 
 Trays
 -----
+![Screenshot of trays](tray.png)
 | Packages |Discription|
 |---|---|
 |[birdtray](https://github.com/gyunaev/birdtray)|Thunderbird with a system tray icon.|
