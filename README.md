@@ -27,6 +27,8 @@ Table of contents
 - [nerd-fonts-complete](https://github.com/ryanoasis/nerd-fonts) as secondary font
 - [Rofi](https://github.com/DaveDavenport/rofi) for the app launcher
 - (Optional) [lxappearance](https://sourceforge.net/projects/lxde/files/LXAppearance/) to set up the gtk and icon theme
+- (Optional) [bibata-cursor-theme](https://github.com/KaizIqbal/Bibata_Cursor) as mouse theme
+- (Optional) [papirus-icon-theme](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme) as icon theme
 
 ### 2) Clone the configuration
 
@@ -35,7 +37,7 @@ git clone https://github.com/RJMVisser/Arch-Rice.git ~/.config/awesome
 ```
 
 ### 3) Set the themes
-Start **lxappearance** to active the **icon** theme and **GTK** theme
+Start **lxappearance** to active the **icon** theme, **GTK** theme and **mouse** theme
 
 
 Top Pannel
