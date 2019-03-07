@@ -33,7 +33,7 @@ Top Pannel
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 ![#fb0000](https://placehold.it/15/fb0000/000000?text=+) Trays
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-![#fbf100](https://placehold.it/15/fbf100/000000?text=+) Tray counter and show/hide button
+![#fbf100](https://placehold.it/15/fbf100/000000?text=+) Tray counter and show/hide button for trays
 
 
 Trays
