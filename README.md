@@ -23,6 +23,10 @@ Programs
 Required
 --------
 
+Personal favorites
+------------------
+
+
 Top Pannel
 ==========
 ![Screenshot of top pannel](toppannel.png)
@@ -50,9 +54,6 @@ Trays
 |blueman|GTK+ Bluetooth Manager.|
 |[pa-applet-git](https://github.com/fernandotcl/pa-applet)|PulseAudio control applet.|
 
-
-Personal favorites
-------------------
 
 AUR Helper
 ==========
