@@ -1,1 +1,1 @@
-![Alt Text](rice.gif)
+![Alt Text](rice.gif?raw=true)
