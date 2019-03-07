@@ -32,13 +32,16 @@ Top Pannel
 ==========
 ![Screenshot of top pannel](toppannel.png)
 
-![#fb5700](https://placehold.it/15/fb5700/000000?text=+) Layout indicator
+
+<p align="center">
+<img src="https://placehold.it/15/fb5700/000000?text=+"> Layout indicator <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-![#00fb02](https://placehold.it/15/00fb02/000000?text=+) Workspace indicator
+<img src="https://placehold.it/15/00fb02/000000?text=+"> Workspace indicator <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-![#fb0000](https://placehold.it/15/fb0000/000000?text=+) Trays
+<img src="https://placehold.it/15/fb0000/000000?text=+"> Trays <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-![#fbf100](https://placehold.it/15/fbf100/000000?text=+) Tray counter and show/hide button for trays
+<img src="https://placehold.it/15/fbf100/000000?text=+"> Tray counter and show/hide button for trays 
+</p>
 
 
 Trays
