@@ -56,6 +56,9 @@ git clone https://github.com/RJMVisser/Arch-Rice.git ~/.zshrc
 
 Terminal drawning
 =================
+
+![draw preview gif](draw.gif?raw=true)
+
 | Packages |Discription|
 |---|---|
 |slop| |
