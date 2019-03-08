@@ -59,7 +59,7 @@ cp .Xresources ~/.Xresources
 |[zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting)|Fish shell like syntax highlighting for Zsh|
 
 
-Terminal drawning
+Terminal drawing
 =================
 
 ![draw preview gif](draw.gif?raw=true)
