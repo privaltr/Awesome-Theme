@@ -75,6 +75,8 @@ Terminal drawing
 Terminal increase font
 ======================
 
+![increase/decrease fontsize preview gif](font-size.gif?raw=true)
+
 > location /usr/lib/urxvt/perl/font-size
 
 
