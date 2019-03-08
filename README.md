@@ -59,9 +59,13 @@ Terminal drawning
 
 ![draw preview gif](draw.gif?raw=true)
 
+```
+git clone https://github.com/RJMVisser/Arch-Rice.git ~/.config/awesome
+```
+
 | Packages |Discription|
 |---|---|
-|slop| |
+|[slop](https://github.com/naelstrof/slop)|Utility to query the user for a selection and print the region to stdout|
 
 
 Top Pannel
