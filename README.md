@@ -23,6 +23,7 @@ Table of contents
 
 ### 1) Get all the dependencies
 - [AwesomeWM](https://awesomewm.org/) as the window manager
+- [Compton](https://github.com/yshui/compton) X compositor that may fix tearing issues
 - [ttf-dejavu](https://dejavu-fonts.github.io/) as the **font**
 - [nerd-fonts-complete](https://github.com/ryanoasis/nerd-fonts) as secondary font
 - [Rofi](https://github.com/DaveDavenport/rofi) for the app launcher
@@ -38,6 +39,26 @@ git clone https://github.com/RJMVisser/Arch-Rice.git ~/.config/awesome
 
 ### 3) Set the themes
 Start **lxappearance** to active the **icon** theme, **GTK** theme and **mouse** theme
+
+Shell
+========
+
+```
+git clone https://github.com/RJMVisser/Arch-Rice.git ~/.zshrc
+```
+
+| Packages |Discription|
+|---|---|
+|[zsh](https://www.zsh.org/)|A very advanced and programmable command interpreter (shell) for UNIX|
+|[zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions)|Fish-like autosuggestions for zsh|
+|[zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting)|Fish shell like syntax highlighting for Zsh|
+
+
+Terminal drawning
+=================
+| Packages |Discription|
+|---|---|
+|slop| |
 
 
 Top Pannel
@@ -88,6 +109,9 @@ Lockscreen
 ```
 sudo yay -Sy i3lock-color-git i3lock-fancy-dualmonitors-git
 ```
+
+Dolphin terminal
+================
 
 
 Dolphin icons missing
