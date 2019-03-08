@@ -34,7 +34,9 @@ Table of contents
 ### 2) Clone the configuration
 
 ```
-git clone https://github.com/RJMVisser/Arch-Rice.git ~/.config/awesome
+git clone https://github.com/RJMVisser/Arch-Rice.git 
+cd Arch-Rice
+cp -R .config/awesome ~/.config/awesome
 ```
 
 ### 3) Set the themes
@@ -44,7 +46,10 @@ Shell
 ========
 
 ```
-git clone https://github.com/RJMVisser/Arch-Rice.git ~/.zshrc
+git clone https://github.com/RJMVisser/Arch-Rice.git 
+cd Arch-Rice
+cp .zshrc ~/.zshrc
+cp .Xresources ~/.Xresources
 ```
 
 | Packages |Discription|
@@ -59,9 +64,7 @@ Terminal drawning
 
 ![draw preview gif](draw.gif?raw=true)
 
-```
-git clone https://github.com/RJMVisser/Arch-Rice.git ~/.config/awesome
-```
+> Location: .config/awesome/color/scripts/draw.sh
 
 | Packages |Discription|
 |---|---|
