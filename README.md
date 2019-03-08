@@ -90,12 +90,12 @@ Trays
 | Packages |Discription|
 |---|---|
 |[birdtray](https://github.com/gyunaev/birdtray)|Thunderbird with a system tray icon.|
-|kdeconnect|Adds communication between KDE and your smartphone.|
-|simplescreenrecorder|A feature-rich screen recorder that supports X11 and OpenGL.|
-|xfce4-power-manager|Power manager for Xfce desktop.|
-|redshift|Adjusts the color temperature of your screen according to your surroundings.|
-|network-manager-applet|Applet for managing network connections.|
-|blueman|GTK+ Bluetooth Manager.|
+|[kdeconnect](https://community.kde.org/KDEConnect)|Adds communication between KDE and your smartphone.|
+|[simplescreenrecorder](http://www.maartenbaert.be/simplescreenrecorder/)|A feature-rich screen recorder that supports X11 and OpenGL.|
+|[xfce4-power-manager](https://goodies.xfce.org/projects/applications/xfce4-power-manager)|Power manager for Xfce desktop.|
+|[redshift](http://jonls.dk/redshift/)|Adjusts the color temperature of your screen according to your surroundings.|
+|[network-manager-applet](https://wiki.gnome.org/Projects/NetworkManager/)|Applet for managing network connections.|
+|[blueman](https://github.com/blueman-project/blueman)|GTK+ Bluetooth Manager.|
 |[pa-applet-git](https://github.com/fernandotcl/pa-applet)|PulseAudio control applet.|
 
 
