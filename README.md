@@ -71,6 +71,13 @@ Terminal drawing
 |[slop](https://github.com/naelstrof/slop)|Utility to query the user for a selection and print the region to stdout|
 |[rxvt-unicode-pixbuf](http://software.schmorp.de/pkg/rxvt-unicode.html)|Unicode enabled rxvt-clone terminal emulator (urxvt), with support for custom icons and backgrounds|
 
+
+Terminal increase font
+======================
+
+> location /usr/lib/urxvt/perl/font-size
+
+
 Top Pannel
 ==========
 ![Screenshot of top pannel](toppannel.png)
