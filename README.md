@@ -12,6 +12,7 @@ Table of contents
 <!--ts-->
    * [Intro](#personal-awesomewm-config-and-rice)
    * [Table of contents](#table-of-contents)
+   * [Grub2 Theme](https://github.com/naueramant/lightdm-webkit-sequoia)
    * [Top pannel](#top-pannel)
       * [Trays](#trays)
    * [AUR Helper](#aur-helper)
