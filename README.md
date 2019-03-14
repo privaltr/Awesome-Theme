@@ -13,6 +13,7 @@ Table of contents
    * [Intro](#personal-awesomewm-config-and-rice)
    * [Table of contents](#table-of-contents)
    * [Grub2 Theme](https://github.com/RJMVisser/Arch-Grub2)
+   * [Locate pointer](https://github.com/RJMVisser/Locate-pointer)
    * [Top pannel](#top-pannel)
       * [Trays](#trays)
    * [AUR Helper](#aur-helper)
