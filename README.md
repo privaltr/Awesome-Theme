@@ -143,3 +143,7 @@ sudo pacman -Sy qt5-styleplugins
 echo 'QT_QPA_PLATFORMTHEME=gtk2' | sudo tee --append /etc/enviroment
 ```
 > Another solution is provided by the qt5ct package, which provides a Qt5 QPA independent of the desktop environment and a configuration utility. After installing the package, run qt5ct to set an icon theme, and set the environment variable Q\_QPA\_PLATFORMTHEME="qt5ct" so that the settings are picked up by Qt applications. Alternatively, use --platformtheme qt5ct as argument to the Qt5 application. 
+
+To Do
+=====
+- [] Incomplete hotkeys in main hotkeys helper
