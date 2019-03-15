@@ -146,4 +146,4 @@ echo 'QT_QPA_PLATFORMTHEME=gtk2' | sudo tee --append /etc/enviroment
 
 To Do
 =====
-- [] Incomplete hotkeys in main hotkeys helper
+- [ ] Incomplete hotkeys in main hotkeys helper
