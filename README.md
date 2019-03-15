@@ -146,4 +146,5 @@ echo 'QT_QPA_PLATFORMTHEME=gtk2' | sudo tee --append /etc/enviroment
 
 To Do
 =====
-- [ ] Incomplete hotkeys in main hotkeys helper
+- [ ] Fix incomplete hotkeys in main hotkeys helper
+- [ ] Add hotkey to move window to other monitor
