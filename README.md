@@ -19,6 +19,7 @@ Table of contents
    * [AUR Helper](#aur-helper)
    * [Lockscreen](#lockscreen)
    * [Dolphin icons missing](#dolphin-icons-missing)
+   * [Multiple keyboard layouts](#multiple-keyboard-layouts)
 <!--te-->
 
 ## Installation
@@ -143,6 +144,16 @@ sudo pacman -Sy qt5-styleplugins
 echo 'QT_QPA_PLATFORMTHEME=gtk2' | sudo tee --append /etc/enviroment
 ```
 > Another solution is provided by the qt5ct package, which provides a Qt5 QPA independent of the desktop environment and a configuration utility. After installing the package, run qt5ct to set an icon theme, and set the environment variable Q\_QPA\_PLATFORMTHEME="qt5ct" so that the settings are picked up by Qt applications. Alternatively, use --platformtheme qt5ct as argument to the Qt5 application. 
+
+
+Multiple keyboard layouts
+=========================
+Add the following to your profile:
+```
+setxkbmap -layout us,ru
+setxkbmap -option 'grp:alt_shift_toggle'
+```
+
 
 To Do
 =====
