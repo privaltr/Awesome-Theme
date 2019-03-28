@@ -153,7 +153,7 @@ Add the following to your profile:
 setxkbmap -layout us,ru
 setxkbmap -option 'grp:shift_caps_toggle'
 ```
-
+>> man xkeyboard-config
 
 
 To Do
