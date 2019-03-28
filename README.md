@@ -153,45 +153,8 @@ Add the following to your profile:
 setxkbmap -layout us,ru
 setxkbmap -option 'grp:shift_caps_toggle'
 ```
->> ┌───────────────────────────────────────────────────────────────────────────────────────────────────────────┐
-   │Option                      Description                                                                    │
-   ├───────────────────────────────────────────────────────────────────────────────────────────────────────────┤
-   │grp:switch                  Right Alt (while pressed)                                                      │
-   │grp:lswitch                 Left Alt (while pressed)                                                       │
-   │grp:lwin\_switch             Left Win (while pressed)                                                       │
-   │grp:rwin\_switch             Right Win (while pressed)                                                      │
-   │grp:win\_switch              Any Win key (while pressed)                                                    │
-   │grp:caps\_switch             Caps Lock (while pressed), Alt+Caps Lock does the original capslock action     │
-   │grp:rctrl\_switch            Right Ctrl (while pressed)                                                     │
-   │grp:toggle                  Right Alt                                                                      │
-   │grp:lalt\_toggle             Left Alt                                                                       │
-   │grp:caps\_toggle             Caps Lock                                                                      │
-   │grp:shift\_caps\_toggle       Shift+Caps Lock                                                                │
-   │grp:shift\_caps\_switch       Caps Lock (to first layout), Shift+Caps Lock (to last layout)                  │
-   │grp:win\_menu\_switch         Left Win (to first layout), Right Win/Menu (to last layout)                    │
-   │grp:lctrl\_rctrl\_switch      Left Ctrl (to first layout), Right Ctrl (to last layout)                       │
-   │grp:alt\_caps\_toggle         Alt+Caps Lock                                                                  │
-   │grp:shifts\_toggle           Both Shift keys together                                                       │
-   │grp:alts\_toggle             Both Alt keys together                                                         │
-   │grp:ctrls\_toggle            Both Ctrl keys together                                                        │
-   │grp:ctrl\_shift\_toggle       Ctrl+Shift                                                                     │
-   │grp:lctrl\_lshift\_toggle     Left Ctrl+Left Shift                                                           │
-   │grp:rctrl\_rshift\_toggle     Right Ctrl+Right Shift                                                         │
-   │grp:ctrl\_alt\_toggle         Alt+Ctrl                                                                       │
-   │grp:alt\_shift\_toggle        Alt+Shift                                                                      │
-   │grp:lalt\_lshift\_toggle      Left Alt+Left Shift                                                            │
-   │grp:alt\_space\_toggle        Alt+Space                                                                      │
-   │grp:menu\_toggle             Menu                                                                           │
-   │grp:lwin\_toggle             Left Win                                                                       │
-   │grp:rwin\_toggle             Right Win                                                                      │
-   │grp:lshift\_toggle           Left Shift                                                                     │
-   │grp:rshift\_toggle           Right Shift                                                                    │
-   │grp:lctrl\_toggle            Left Ctrl                                                                      │
-   │grp:rctrl\_toggle            Right Ctrl                                                                     │
-   │grp:sclk\_toggle             Scroll Lock                                                                    │
-   │grp:lctrl\_lwin\_rctrl\_menu   LeftCtrl+LeftWin (to first layout), RightCtrl+Menu (to second layout)          │
-   │                                                                                                           │
-   └───────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+
 
 To Do
 =====
