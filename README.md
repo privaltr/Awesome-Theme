@@ -160,3 +160,9 @@ To Do
 =====
 - [ ] Fix incomplete hotkeys in main hotkeys helper
 - [ ] Add hotkey to move window to other monitor
+
+Used Projects
+=============
+[Redflat by worron](https://github.com/worron/redflat)
+
+[Lain by lcpz](https://github.com/lcpz/lain)
