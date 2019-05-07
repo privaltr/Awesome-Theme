@@ -63,6 +63,7 @@ theme.calendar                                  = theme.icon_dir .. "/cal.png"
 theme.cpu                                       = theme.icon_dir .. "/cpu.png"
 theme.net_up                                    = theme.icon_dir .. "/net_up.png"
 theme.net_down                                  = theme.icon_dir .. "/net_down.png"
+theme.calendar                                  = theme.icon_dir ..  "/cal.png"
 theme.tasklist_plain_task_name                  = true
 theme.tasklist_disable_icon                     = true
 theme.useless_gap                               = 10
@@ -101,10 +102,10 @@ local clockbg = wibox.container.background(mytextclock, theme.bg_focus, gears.sh
 local clockwidget = wibox.container.margin(clockbg, 0, 3, 5, 5)
 
 -- Calendar
--- local mytextcalendar = wibox.widget.textclock(markup.fontfg(theme.font, "#FFFFFF", space3 .. "%b %d " .. markup.font("Roboto 5", " ")))
--- local calendar_icon = wibox.widget.imagebox(theme.calendar)
--- local calbg = wibox.container.background(mytextcalendar, theme.bg_focus, gears.shape.rectangle)
--- local calendarwidget = wibox.container.margin(calbg, 0, 0, 5, 5)
+local mytextcalendar = wibox.widget.textclock(markup.fontfg(theme.font, "#FFFFFF", space3 .. "%d %b " .. markup.font("Roboto 5", " ")))
+local calendar_icon = wibox.widget.imagebox(theme.calendar)
+local calbg = wibox.container.background(mytextcalendar, theme.bg_focus, gears.shape.rectangle)
+local calendarwidget = wibox.container.margin(calbg, 0, 0, 5, 5)
 --theme.cal = lain.widget.cal({
 --      attach_to = { mytextclock, mytextcalendar },
 --      notification_preset = {
