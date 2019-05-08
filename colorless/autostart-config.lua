@@ -22,6 +22,8 @@ function autostart.run()
 	awful.spawn.with_shell("redshift-gtk -c ~/.config/redshift.conf")
 	awful.spawn.with_shell("xfce4-power-manager")
 	awful.spawn.with_shell("kdeconnect-indicator")
+    awful.spawn.with_shell("sleep 3 && birdtray")
+	awful.spawn.with_shell("simplescreenrecorder --start-hidden")
 
 	awful.spawn.with_shell("synclient MinSpeed=1.3")
 	awful.spawn.with_shell("synclient TapButton1=1")
