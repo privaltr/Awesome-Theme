@@ -24,7 +24,7 @@ function env:init(args)
 
 	-- environment vars
 	self.terminal = args.terminal or "urxvt"
-	self.mod = args.mod or "Mod4"
+	self.mod = args.mod or "Mod1" --or Mod4 for windows key
 	self.fm = args.fm or "nemo"
 	self.home = os.getenv("HOME")
 	self.themedir = awful.util.get_configuration_dir() .. theme
