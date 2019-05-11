@@ -24,7 +24,9 @@ theme.color = {
 	shadow1   = "#141414",
 	shadow2   = "#313131",
 	shadow3   = "#1c1c1c",
-	shadow4   = "#767676"
+	shadow4   = "#767676",
+
+	background = "#303030"
 
 }
 
@@ -65,6 +67,7 @@ theme.fonts = {
 	tooltip  = "sans 12",      -- tooltip font
 	notify   = "sans bold 10", -- redflat notify popup font
 	clock    = "sans bold 12", -- textclock widget font
+	time     = "Roboto Bold 10", -- texttime widget font
 	qlaunch  = "sans bold 14", -- quick launch key label font
 	title    = "sans bold 12", -- widget titles font
 	keychain = "sans bold 14", -- key sequence tip font
@@ -81,7 +84,8 @@ theme.fonts = {
 }
 
 theme.cairo_fonts = {
-	tag         = { font = "Sans", size = 16, face = 1 }, -- tag widget font
+	tag         = { font = "Roboto Bold", size = 12, face = 1 }, -- tag widget font
+	--tag         = { font = "Sans", size = 16, face = 1 }, -- tag widget font
 	appswitcher = { font = "Sans", size = 22, face = 1 }, -- appswitcher widget font
 	navigator   = {
 		title = { font = "Sans", size = 28, face = 1, slant = 0 }, -- window navigation title font
@@ -324,10 +328,8 @@ theme.gauge.tag.orange = {
 -- Task
 ------------------------------------------------------------
 theme.gauge.task.blue = {
-	width    = 70,
-	show_min = true,
 	font     = theme.cairo_fonts.tag,
-	point    = { width = 70, height = 3, gap = 27, dx = 5 },
+	point    = { width = 70, height = 2, gap = 25, dx = 5 },
 	text_gap = 20,
 	color    = theme.color
 }
@@ -384,6 +386,7 @@ theme.widget.wrapper = {
   mainmenu    = { 12, 10, 6, 6 },
 	layoutbox   = { 10, 10, 6, 6 },
 	textclock   = { 12, 12, 0, 0 },
+	texttime     = { 0, 0, 5, 5 },
 	taglist     = { 4, 4, 0, 0 },
 	tray        = { 10, 12, 7, 7 },
 }
@@ -405,6 +408,15 @@ theme.widget.brightness = {
 theme.widget.textclock = {
 	font  = theme.fonts.clock,
 	color = { text = theme.color.icon } }
+
+
+
+-- Texttime
+------------------------------------------------------------
+theme.widget.texttime = {
+	font  = theme.fonts.time,
+	color = { text = theme.color.icon, background = "#303030" } }
+
 
 -- Keyboard layout indicator
 ------------------------------------------------------------
@@ -494,7 +506,8 @@ theme.widget.layoutbox.name_alias = {
 -- Tasklist
 ------------------------------------------------------------
 theme.widget.tasklist = {
-	char_digit  = 5,
+	--char_digit  = 5,
+	need_group  = false,
 	task        = theme.gauge.task.blue
 }
 
@@ -755,7 +768,7 @@ theme.titlebar_fg_focus = "#FFFFFF"
 theme.panel_fg_focus = "#FFFFFF"
 
 
------other heeme
+-----top pannel
 theme.icon_dir                                  = theme.path .. "/icons"
 theme.font                                      = "Roboto Bold 8"
 theme.font_tray                                 = "Roboto Bold 10"

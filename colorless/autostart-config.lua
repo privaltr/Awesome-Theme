@@ -27,6 +27,8 @@ function autostart.run()
 
 	awful.spawn.with_shell("synclient MinSpeed=1.3")
 	awful.spawn.with_shell("synclient TapButton1=1")
+	awful.spawn.with_shell("synclient TouchpadOff=1")
+
 
 end
 

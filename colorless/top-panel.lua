@@ -4,27 +4,34 @@ local redflat = require("redflat")
 local wibox = require("wibox")
 local naughty = require("naughty")
 
+local newflat = require("newflat")
+
 local gears = require("gears")
-local lain  = require("lain")
 
 local string, os = string, os
 local my_table = awful.util.table or gears.table -- 4.{0,1} compatibility
 
-local markup = lain.util.markup
-local space3 = markup.font("Roboto 3", " ")
+
 
 -- Clock
-local mytextclock = wibox.widget.textclock(markup("#FFFFFF", space3 .. "%I:%M %p  " .. markup.font("Roboto 4", " ")))
-mytextclock.font = beautiful.font_tray
 local clock_icon = wibox.widget.imagebox(beautiful.clock)
-local clockbg = wibox.container.background(mytextclock, beautiful.bg_focus, gears.shape.rectangle)
-local clockwidget = wibox.container.margin(clockbg, 0, 3, 5, 5)
+
+-- textdate widget
+--------------------------------------------------------------------------------
+local texttime = {}
+texttime.widget = newflat.widget.texttime({ timeformat = "%I:%M %p ", dateformat = "%H:%M:%S" })
+
 
 -- Calendar
-local mytextcalendar = wibox.widget.textclock(markup.fontfg(beautiful.font_tray, "#FFFFFF", space3 .. "%d %b " .. markup.font("Roboto 5", " ")))
 local calendar_icon = wibox.widget.imagebox(beautiful.calendar)
-local calbg = wibox.container.background(mytextcalendar, beautiful.bg_focus, gears.shape.rectangle)
-local calendarwidget = wibox.container.margin(calbg, 0, 0, 5, 5)
+-- textdate widget
+--------------------------------------------------------------------------------
+local textdate = {}
+textdate.widget = newflat.widget.texttime({ timeformat = "%d %b", dateformat = "%A %d-%m-%Y" })
+
+textdate.buttons = awful.util.table.join(
+	awful.button({}, 1, function() awful.util.spawn("urxvt -name floating -e calcurse") end)
+)
 
 
 -- Separators
@@ -74,13 +81,14 @@ awful.button({         }, 5, function(t) awful.tag.viewprev(t.screen) end)
 local tasklist = {}
 
 tasklist.buttons = awful.util.table.join(
-	awful.button({}, 1, redflat.widget.tasklist.action.select),
+	awful.button({}, 1, newflat.widget.tasklist.action.select),
 	--awful.button({}, 2, redflat.widget.tasklist.action.close),
   --awful.button({}, 2, function() awful.util.spawn("locate-pointer") end),
-	awful.button({}, 3, redflat.widget.tasklist.action.menu),
-	awful.button({}, 4, redflat.widget.tasklist.action.switch_next),
-	awful.button({}, 5, redflat.widget.tasklist.action.switch_prev)
+	awful.button({}, 3, newflat.widget.tasklist.action.menu),
+	awful.button({}, 4, newflat.widget.tasklist.action.switch_next),
+	awful.button({}, 5, newflat.widget.tasklist.action.switch_prev)
 )
+
 
 -- Tray widget
 --------------------------------------------------------------------------------
@@ -168,14 +176,12 @@ function toppanel:init(args)
     taglist[s] = redflat.widget.taglist({ screen = s, buttons = taglist.buttons, hint = env.tagtip }, taglist.style)
 
     -- tasklist widget
-    tasklist[s] = redflat.widget.tasklist({ screen = s, buttons = tasklist.buttons })
+    tasklist[s] = newflat.widget.tasklist({ screen = s, buttons = tasklist.buttons })
 
     s.systray = wibox.widget.systray()
     s.systray.visible = true
 
 
-    -- Quake application
-    s.quake = lain.util.quake({ app = awful.util.terminal })
 
     -- Create a promptbox for each screen
     s.mypromptbox = awful.widget.prompt()
@@ -203,16 +209,17 @@ function toppanel:init(args)
           spr_space,
           s.mypromptbox,
        },
-       s.mytasklist, -- Middle widget
+			 tasklist[s],
+       --s.mytasklist, -- Middle widget
        { -- Right widgets
           layout = wibox.layout.fixed.horizontal,
           s.my_sys,
           spr_right,
           calendar_icon,
-          calendarwidget,
+          env.wrapper(textdate.widget, "texttime",textdate.buttons),
           bottom_bar,
           clock_icon,
-          clockwidget,
+          env.wrapper(texttime.widget, "texttime"),
           env.wrapper(tray.widget, "tray", tray.buttons),
           spr_space,
        },

@@ -105,7 +105,7 @@ function exit_command()
 end
 function lock_command()
   exit_screen_hide()
-  awful.spawn.with_shell('sh /home/rjmvisser/.config/awesome/colorless/scripts/lock.sh')
+  awful.spawn.with_shell('sh ~/.config/awesome/colorless/scripts/lock.sh')
 end
 function poweroff_command()
   awful.spawn.with_shell('systemctl poweroff')

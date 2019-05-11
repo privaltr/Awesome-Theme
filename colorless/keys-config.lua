@@ -11,7 +11,7 @@ local redflat = require("redflat")
 -- Load the widget.
 
 
-local lain          = require("lain")
+local newflat         = require("newflat")
 -- Initialize tables and vars for module
 -----------------------------------------------------------------------------------------------------------------------
 local hotkeys = { mouse = {}, raw = {}, keys = {}, fake = {} }
@@ -312,11 +312,11 @@ function hotkeys:init(args)
  							{ description = "calcurse", group = "tag"},
  		},
 		{
-			{ env.mod,  "Shift" }, "=", function () lain.util.useless_gaps_resize(1) end,
+			{ env.mod,  "Shift" }, "=", function () newflat.newlain.useless_gaps_resize(1) end,
 							{ description = "increment useless gaps", group = "tag"},
 		},
 		{
-			{ env.mod,  "Shift" }, "-", function () lain.util.useless_gaps_resize(-1) end,
+			{ env.mod,  "Shift" }, "-", function () newflat.newlain.useless_gaps_resize(-1) end,
 							{ description = "decrement useless gaps", group = "tag"},
 		},
 		{
@@ -534,7 +534,7 @@ function hotkeys:init(args)
 			{ description = "Maximize", group = "Client keys" }
 		},
 		{
-			{ env.mod, "Shift"   }, "z",      lain.util.magnify_client,
+			{ env.mod, "Shift"   }, "z",      newflat.newlain.magnify_client,
 			{ description = "magnify client", group = "client" }
 		},
 		{
