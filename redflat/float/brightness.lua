@@ -31,7 +31,6 @@ local gsd_command = 'dbus-send --session --print-reply --dest="org.gnome.Setting
 local function default_style()
 	local style = {
 		notify = {},
-			text = nil,
 	}
 	return redutil.table.merge(style, redutil.table.check(beautiful, "widget.brightness") or {})
 end
@@ -83,7 +82,7 @@ function brightness.info_with_xbacklight()
 	local brightness_level = redutil.read.output("xbacklight -get")
 
 	rednotify:show(redutil.table.merge(
-		{ value = brightness_level / 100, text = ""}, --string.format('%.0f', brightness_level) .. "%" },
+		{ value = brightness_level / 100, text = string.format('%.0f', brightness_level) .. "%" },
 		brightness.style.notify
 	))
 end

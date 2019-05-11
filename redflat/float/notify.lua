@@ -15,6 +15,7 @@ local timer = require("gears.timer")
 local redutil = require("redflat.util")
 local svgbox = require("redflat.gauge.svgbox")
 local progressbar = require("redflat.gauge.graph.bar")
+local rectshape = require("gears.shape").rectangle
 
 -- Initialize tables for module
 -----------------------------------------------------------------------------------------------------------------------
@@ -28,14 +29,15 @@ local function default_style()
 		screen_gap      = 0,
 		set_position    = nil,
 		border_margin   = { 20, 20, 20, 20 },
-		elements_margin = { 20, 0, 20, 20 },
+		elements_margin = { 20, 0, 10, 10 },
 		bar_width       = 8,
 		font            = "Sans 14",
 		border_width    = 2,
 		timeout         = 5,
 		icon            = nil,
 		progressbar     = {},
-		color           = { border = "#575757", icon = "#aaaaaa", wibox = "#202020" }
+		color           = { border = "#575757", icon = "#aaaaaa", wibox = "#202020" },
+		shape           = rectshape
 	}
 	return redutil.table.merge(style, redutil.table.check(beautiful, "float.notify") or {})
 end
@@ -71,7 +73,8 @@ function notify:init()
 		ontop        = true,
 		bg           = style.color.wibox,
 		border_width = style.border_width,
-		border_color = style.color.border
+		border_color = style.color.border,
+		shape        = style.shape
 	})
 
 	self.wibox:set_widget(wibox.container.margin(area, unpack(style.border_margin)))
@@ -83,13 +86,10 @@ function notify:init()
 		local args = args or {}
 		align_vertical:reset()
 
-
-			--align_vertical:set_top(text)
-                        --align_vertical:set_middle(bar)
-                        --align_vertical:set_bottom(text)
 		if args.value then
 			bar:set_value(args.value)
-			align_vertical:set_middle(bar)
+			align_vertical:set_top(text)
+			align_vertical:set_bottom(bar)
 		else
 			align_vertical:set_middle(text)
 		end

@@ -23,6 +23,7 @@ local timer = require("gears.timer")
 local redutil = require("redflat.util")
 local dotcount = require("redflat.gauge.graph.dots")
 local tooltip = require("redflat.float.tooltip")
+local rectshape = require("gears.shape").rectangle
 
 -- Initialize tables and wibox
 -----------------------------------------------------------------------------------------------------------------------
@@ -33,13 +34,14 @@ local minitray = { widgets = {}, mt = {} }
 local function default_style()
 	local style = {
 		dotcount     = {},
-		geometry     = { width = 40 },
+		geometry     = { height = 40 },
 		set_position = nil,
 		screen_gap   = 0,
 		border_width = 2,
 		double_wibox = false,
 		show_delay   = 0.05,
-		color        = { wibox = "#202020", border = "#575757" }
+		color        = { wibox = "#202020", border = "#575757" },
+		shape        = rectshape
 	}
 	return redutil.table.merge(style, redutil.table.check(beautiful, "widget.minitray") or {})
 end
@@ -54,7 +56,8 @@ function minitray:init(style)
 		ontop        = true,
 		bg           = style.color.wibox,
 		border_width = style.border_width,
-		border_color = style.color.border
+		border_color = style.color.border,
+		shape        = style.shape
 	}
 
 	self.wibox = wibox(wargs)
@@ -73,7 +76,6 @@ function minitray:init(style)
 	self.geometry = style.geometry
 	self.screen_gap = style.screen_gap
 	self.set_position = style.set_position
-	self.position = style.position
 
 	-- Create tooltip
 	--------------------------------------------------------------------------------
@@ -104,11 +106,10 @@ function minitray:update_geometry()
 	local items = awesome.systray()
 	if items == 0 then items = 1 end
 
-	self.wibox:geometry({ width = self.geometry.width or self.geometry.width * items })
+	self.wibox:geometry({ width = self.geometry.width or self.geometry.height * items })
 
 	if self.set_position then
-		self.wibox:geometry({ y = self.position.y - 45, x = self.position.x - 40 * items, width = self.geometry.width * items})
-
+		self.wibox:geometry(self.set_position())
 	else
 		awful.placement.under_mouse(self.wibox)
 	end

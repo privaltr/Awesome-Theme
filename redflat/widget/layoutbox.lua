@@ -116,11 +116,7 @@ function layoutbox.new(args, style)
 	local s = args.screen or 1
 	local style = redutil.table.merge(default_style(), style or {})
 	local w = svgbox()
-
 	w:set_color(style.color.icon)
-	if awful.screen.focused().index == s.index then
-		w:set_color(style.color.icon_focus)
-	end
 
 	if not layoutbox.menu then layoutbox:init(layouts, style) end
 
@@ -135,11 +131,6 @@ function layoutbox.new(args, style)
 		w:set_image(style.icon[layout] or style.icon.unknown)
 		layoutbox:update_tooltip(layout)
 
-		w:set_color(style.color.icon)
-		if awful.screen.focused().index == s.index then
-			w:set_color(style.color.icon_focus)
-		end
-
 		if layoutbox.menu.wibox.visible then
 			layoutbox:update_menu(last_tag)
 		end
@@ -149,14 +140,6 @@ function layoutbox.new(args, style)
 	--------------------------------------------------------------------------------
 	tag.connect_signal("property::selected", update)
 	tag.connect_signal("property::layout", update)
-
-
-	-- client.connect_signal("focus", update)
-	-- client.connect_signal("unfocus", update)
-	-- screen.connect_signal("focus", function(c) update() end)
-	-- screen.connect_signal("property::screen", function(c) update() end)
-	screen.connect_signal("request::activate", update)
-
 	w:connect_signal("mouse::enter",
 		function()
 			local layout = layout.getname(layout.get(s))

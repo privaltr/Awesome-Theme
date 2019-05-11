@@ -21,6 +21,7 @@ local color = require("gears.color")
 local redflat = require("redflat")
 local redutil = require("redflat.util")
 local redtip = require("redflat.float.hotkeys")
+local rectshape = require("gears.shape").rectangle
 
 -- Initialize tables and vars for module
 -----------------------------------------------------------------------------------------------------------------------
@@ -85,13 +86,13 @@ local function default_style()
 		border_margin   = { 20, 20, 10, 10 },
 		appline         = { iwidth = 160, im = { 10, 10, 5, 5 }, igap = { 0, 0, 10, 10 }, lheight = 30 },
 		state           = { gap = 4, radius = 3, size = 10, height = 20, width = 20 },
-		--configfile      = os.getenv("HOME") .. "/.cache/awesome/applist",
-		configfile      = os.getenv("HOME") .. "/.config/awesome/applist",
+		configfile      = os.getenv("HOME") .. "/.cache/awesome/applist",
 		label_font      = "Sans 14",
 		border_width    = 2,
 		keytip          = { geometry = { width = 500, height = 400 }, exit = false },
 		color           = { border = "#575757", text = "#aaaaaa", main = "#b1222b", urgent = "#32882d",
-		                    wibox  = "#202020", icon = "#a0a0a0", bg   = "#161616", gray   = "#575757" }
+		                    wibox  = "#202020", icon = "#a0a0a0", bg   = "#161616", gray   = "#575757" },
+		shape           = rectshape
 	}
 
 	return redutil.table.merge(style, redutil.table.check(beautiful, "float.qlaunch") or {})
@@ -338,7 +339,8 @@ function qlaunch:init(args, style)
 		ontop        = true,
 		bg           = style.color.wibox,
 		border_width = style.border_width,
-		border_color = style.color.border
+		border_color = style.color.border,
+		shape        = style.shape
 	})
 	self.wibox:geometry(style.geometry)
 	redutil.placement.centered(self.wibox, nil, screen[mouse.screen].workarea)

@@ -33,7 +33,7 @@ titlebar.list = setmetatable({}, { __mode = 'k' })
 -----------------------------------------------------------------------------------------------------------------------
 local function default_style()
 	local style = {
-		size          = 15,
+		size          = 8,
 		position      = "top",
 		icon          = { size = 20, gap = 10, angle = 0 },
 		font          = "Sans 12 bold",
