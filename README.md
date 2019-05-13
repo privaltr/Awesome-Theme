@@ -85,7 +85,7 @@ Terminal increase font
 
 Top Pannel
 ==========
-![Screenshot of top pannel](toppannel.png)
+![Screenshot of top pannel](https://raw.githubusercontent.com/RJMVisser/Arch-Rice/master/toppannel.png)
 
 
 <p align="center">
