@@ -16,9 +16,14 @@ require("awful.autofocus")
 -- User modules
 ------------------------------------------------------------
 local redflat = require("redflat")
-
+local newflat = require("newflat")
 -- global module
-timestamp = require("redflat.timestamp")
+-- timestamp = require("redflat.timestamp")
+-- debug locker
+local lock = lock or {}
+
+redflat.startup.locked = lock.autostart
+redflat.startup:activate()
 
 -- Error handling
 -----------------------------------------------------------------------------------------------------------------------
@@ -95,7 +100,7 @@ awful.button({ }, 5, function () awful.layout.inc(-1) end)
 -- Tray widget
 --------------------------------------------------------------------------------
 local tray = {}
-tray.widget = redflat.widget.minitray(nil, { double_wibox = true })
+tray.widget = newflat.widget.minitray(nil, { double_wibox = true })
 
 tray.buttons = awful.util.table.join(
 	awful.button({}, 1, function() redflat.widget.minitray:toggle() end)
@@ -197,6 +202,9 @@ timer {
 -----------------------------------------------------------------------------------------------------------------------
 local autostart = require("colorless.autostart-config") -- load file with autostart application list
 
-if timestamp.is_startup() then
-        autostart.run()
+-- Autostart user applications
+-----------------------------------------------------------------------------------------------------------------------
+if redflat.startup.is_startup then
+	local autostart = require("colorless.autostart-config") -- load file with autostart application list
+	autostart.run()
 end

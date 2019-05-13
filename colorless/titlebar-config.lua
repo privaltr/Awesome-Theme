@@ -1,3 +1,4 @@
+
 -----------------------------------------------------------------------------------------------------------------------
 --                                               Titlebar config                                                     --
 -----------------------------------------------------------------------------------------------------------------------
@@ -5,69 +6,37 @@
 -- Grab environment
 local awful = require("awful")
 local wibox = require("wibox")
-local gears = require("gears")
+local beautiful = require("beautiful")
+
 -- local redflat = require("redflat")
 local redtitle = require("redflat.titlebar")
+local redutil = require("redflat.util")
 local clientmenu = require("redflat.float.clientmenu")
 
-local beautiful = require("beautiful")
 -- Initialize tables and vars for module
 -----------------------------------------------------------------------------------------------------------------------
 local titlebar = {}
-
 local my_table      = awful.util.table or gears.table
-
 -- Support functions
 -----------------------------------------------------------------------------------------------------------------------
 local function title_buttons(c)
 	return awful.util.table.join(
-		awful.button({ }, 1, function()
-	        local c = mouse.object_under_pointer()
-	        client.focus = c
-	        c:raise()
-	        local function single_tap()
-	          awful.mouse.client.move(c)
-	        end
-	        local function double_tap()
-	          gears.timer.delayed_call(function()
-	              c.maximized = not c.maximized
-	          end)
-	        end
-	        single_double_tap(single_tap, double_tap)
-	    end),
-			-- Middle button - close
-		awful.button({ }, 2, function ()
-				window_to_kill = mouse.object_under_pointer()
-				window_to_kill:kill()
-		end),
-		awful.button({ }, 3, function()
-        c = mouse.object_under_pointer()
-        client.focus = c
-        c:raise()
-        awful.mouse.client.resize(c)
-    end)
+		awful.button(
+			{ }, 1,
+			function()
+				client.focus = c;  c:raise()
+				awful.mouse.client.move(c)
+			end
+		),
+		awful.button(
+			{ }, 3,
+			function()
+				client.focus = c;  c:raise()
+				clientmenu:show(c)
+			end
+		)
 	)
 end
-
-local double_tap_timer = nil
-function single_double_tap(single_tap_function, double_tap_function)
-  if double_tap_timer then
-    double_tap_timer:stop()
-    double_tap_timer = nil
-    double_tap_function()
-    return
-  end
-
-  double_tap_timer =
-    gears.timer.start_new(0.20, function()
-                            double_tap_timer = nil
-                            single_tap_function()
-                            return false
-    end)
-end
-
-
-
 
 local function on_maximize(c)
 	-- hide/show title bar
@@ -85,13 +54,23 @@ end
 
 -- Connect titlebar building signal
 -----------------------------------------------------------------------------------------------------------------------
-function titlebar:init(args)
+function titlebar:init()
 
-	local args = args or {}
 	local style = {}
 
-	style.light = args.light or redtitle.get_style()
-	style.full = args.full or { size = 25, icon = { size = 30, gap = 0, angle = 0.5 } }
+	-- titlebar schemes
+	style.base   = redutil.table.merge(redutil.table.check(beautiful, "titlebar.base") or {}, { size = 8 })
+	style.iconic = redutil.table.merge(style.base, { size = 24 })
+
+	-- titlebar elements styles
+	style.mark_mini = redutil.table.merge(
+		redutil.table.check(beautiful, "titlebar.mark") or {},
+		{ size = 30, gap = 10, angle = 0 }
+	)
+	style.icon = redutil.table.merge(
+		redutil.table.check(beautiful, "titlebar.icon") or {},
+		{ gap = 10 }
+)
 
 	-- client.connect_signal(
 	-- 	"request::titlebars",

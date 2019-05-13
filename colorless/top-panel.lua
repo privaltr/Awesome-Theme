@@ -1,6 +1,7 @@
 local beautiful = require("beautiful")
 local awful = require("awful")
 local redflat = require("redflat")
+
 local wibox = require("wibox")
 local naughty = require("naughty")
 
@@ -93,7 +94,7 @@ tasklist.buttons = awful.util.table.join(
 -- Tray widget
 --------------------------------------------------------------------------------
 local tray = {}
-tray.widget = redflat.widget.minitray(nil, { double_wibox = true })
+tray.widget = newflat.widget.minitray(nil, { double_wibox = true })
 
 tray.buttons = awful.util.table.join(
 	awful.button({}, 1, function() awful.screen.focused().systray.visible = not awful.screen.focused().systray.visible end)
@@ -170,7 +171,7 @@ function toppanel:init(args)
                     screen = s,
     })
     -- layoutbox widget
-    layoutbox[s] = redflat.widget.layoutbox({ screen = s })
+    layoutbox[s] = newflat.widget.layoutbox({ screen = s })
 
     -- taglist widget
     taglist[s] = redflat.widget.taglist({ screen = s, buttons = taglist.buttons, hint = env.tagtip }, taglist.style)
