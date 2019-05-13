@@ -150,11 +150,6 @@ function layoutbox.new(args, style)
 	tag.connect_signal("property::selected", update)
 	tag.connect_signal("property::layout", update)
 
-
-	-- client.connect_signal("focus", update)
-	-- client.connect_signal("unfocus", update)
-	-- screen.connect_signal("focus", function(c) update() end)
-	-- screen.connect_signal("property::screen", function(c) update() end)
 	screen.connect_signal("request::activate", update)
 
 	w:connect_signal("mouse::enter",

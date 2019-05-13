@@ -99,54 +99,14 @@ awful.button({ }, 5, function () awful.layout.inc(-1) end)
 
 -- Tray widget
 --------------------------------------------------------------------------------
-local tray = {}
-tray.widget = newflat.widget.minitray(nil, { double_wibox = true })
+-- local tray = {}
+-- tray.widget = redflat.widget.minitray()
+--
+-- tray.buttons = awful.util.table.join(
+-- 	awful.button({}, 1, function() awful.screen.focused().systray.visible = not awful.screen.focused().systray.visible end)
+-- )
 
-tray.buttons = awful.util.table.join(
-	awful.button({}, 1, function() redflat.widget.minitray:toggle() end)
-)
 
--- PA volume control
---------------------------------------------------------------------------------
-local volume = {}
-volume.widget = redflat.widget.pulse(nil, { widget = redflat.gauge.audio.red.new })
-
--- activate player widget
-redflat.float.player:init({ name = env.player })
-
-volume.buttons = awful.util.table.join(
-	awful.button({}, 4, function() redflat.widget.pulse:change_volume()                end),
-	awful.button({}, 5, function() redflat.widget.pulse:change_volume({ down = true }) end),
-	awful.button({}, 2, function() redflat.widget.pulse:mute()                         end),
-	awful.button({}, 3, function() redflat.float.player:show()                         end),
-	awful.button({}, 1, function() redflat.float.player:action("PlayPause")            end),
-	awful.button({}, 8, function() redflat.float.player:action("Previous")             end),
-	awful.button({}, 9, function() redflat.float.player:action("Next")                 end)
-)
-
--- System resource monitoring widgets
---------------------------------------------------------------------------------
-local sysmon = { widget = {}, buttons = {} , icon = {}}
-
--- icons
-sysmon.icon.battery = redflat.util.table.check(beautiful, "icon.widget.battery")
-sysmon.icon.cpuram = redflat.util.table.check(beautiful, "icon.widget.monitor")
-
--- battery
-sysmon.widget.battery = redflat.widget.sysmon(
-        { func = redflat.system.pformatted.bat(25), arg = "BAT1" },
-        { timeout = 60, widget = redflat.gauge.icon.single, monitor = { is_vertical = true, icon = sysmon.icon.battery } }
-)
-
--- network speed
-sysmon.widget.network = redflat.widget.net(
-	{
-		interface = "wlp5s0",
-		speed = { up = 6 * 1024^2, down = 6 * 1024^2 },
-		autoscale = false
-	},
-	{ timeout = 2, widget = redflat.gauge.icon.double }
-)
 
 
 -- Toppanel

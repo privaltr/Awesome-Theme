@@ -6,7 +6,7 @@ unpack = unpack or table.unpack
 -- timestamp.lock = false
 lock = {} -- global
 lock.desktop = false
-lock.autostart = true
+lock.autostart = false
 
 -- Select configuration file
 local rc = "rc-colorless"

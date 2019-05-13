@@ -59,12 +59,12 @@ function bluetag.new(style)
 	------------------------------------------------------------
 	function widg:set_state(state)
 		data.state = state
-		self:emit_signal("widget::updated")
+		self:emit_signal("widget::redraw_needed")
 	end
 
 	function widg:set_width(width)
 		data.width = width
-		self:emit_signal("widget::updated")
+		self:emit_signal("widget::redraw_needed")
 	end
 
 	-- Fit
@@ -87,7 +87,7 @@ function bluetag.new(style)
 			for i = 1, n do
 				local cl = data.state.list[i].focus and "#303030" or
 				           data.state.list[i].urgent and style.color.urgent or
-				           data.state.list[i].minimized and style.show_min and style.color.gray or "#303030"
+				           data.state.list[i].minimized and style.show_min and "#303030" or "#303030"
 				cr:set_source(color(cl))
 				cr:rectangle((i - 1) * (style.point.dx + width), 5, width, 22)
 				cr:fill()
@@ -136,8 +136,7 @@ function bluetag.new(style)
 			or style.color.icon
 		))
 		newutil.cairo.set_font(cr, style.font)
-		newutil.cairo.textcentre.horizontal(cr, { width / 2, style.text_gap }, data.state.text, width)
-
+		newutil.cairo.textcentre.horizontal(cr, { width / 2, style.text_shift }, data.state.text, width)
 	end
 
 	--------------------------------------------------------------------------------

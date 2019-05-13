@@ -58,7 +58,7 @@ local layoutbox = {}
 
 layoutbox.buttons = awful.util.table.join(
   awful.button({ }, 1, function () exit_screen_show() end),
-  awful.button({ }, 3, function () redflat.widget.layoutbox:toggle_menu(mouse.screen.selected_tag) end),
+  awful.button({ }, 3, function () newflat.widget.layoutbox:toggle_menu(mouse.screen.selected_tag) end),
   awful.button({ }, 4, function () awful.layout.inc( 1) end),
   awful.button({ }, 5, function () awful.layout.inc(-1) end)
 )
@@ -71,7 +71,7 @@ taglist.buttons = awful.util.table.join(
 awful.button({         }, 1, function(t) t:view_only() end),
 awful.button({ env.mod }, 1, function(t) if client.focus then client.focus:move_to_tag(t) end end),
 awful.button({         }, 2, awful.tag.viewtoggle),
-awful.button({         }, 3, function(t) redflat.widget.layoutbox:toggle_menu(t) end),
+awful.button({         }, 3, function(t) newflat.widget.layoutbox:toggle_menu(t) end),
 awful.button({ env.mod }, 3, function(t) if client.focus then client.focus:toggle_tag(t) end end),
 awful.button({         }, 4, function(t) awful.tag.viewnext(t.screen) end),
 awful.button({         }, 5, function(t) awful.tag.viewprev(t.screen) end)
@@ -94,7 +94,7 @@ tasklist.buttons = awful.util.table.join(
 -- Tray widget
 --------------------------------------------------------------------------------
 local tray = {}
-tray.widget = newflat.widget.minitray(nil, { double_wibox = true })
+tray.widget = redflat.widget.minitray()
 
 tray.buttons = awful.util.table.join(
 	awful.button({}, 1, function() awful.screen.focused().systray.visible = not awful.screen.focused().systray.visible end)
@@ -183,16 +183,14 @@ function toppanel:init(args)
     s.systray.visible = true
 
 
-
     -- Create a promptbox for each screen
     s.mypromptbox = awful.widget.prompt()
 
-    s.systray = wibox.widget.systray()
     s.systray:set_base_size(18)
     s.my_sys = wibox.container.margin(s.systray, 0, 0, 5, 5)
 
     -- Create a tasklist widget
-    s.mytasklist = awful.widget.tasklist(s, awful.widget.tasklist.filter.currenttags, awful.util.tasklist_buttons, { fg_focus = beautiful.panel_fg_focus, bg_focus = beautiful.bg_focus, shape = gears.shape.rectangle, shape_border_width = 5, shape_border_color = beautiful.tasklist_bg_normal, align = "center" })
+    s.mytasklist = awful.widget.tasklist(s, awful.widget.tasklist.filter.currenttags, awful.util.tasklist_buttons, { fg_focus = beautiful.color.text, bg_focus = beautiful.bg_focus, shape = gears.shape.rectangle, shape_border_width = 5, shape_border_color = beautiful.tasklist_bg_normal, align = "center" })
 
     -- Create the wibox
     --panel wibox
@@ -214,7 +212,7 @@ function toppanel:init(args)
        --s.mytasklist, -- Middle widget
        { -- Right widgets
           layout = wibox.layout.fixed.horizontal,
-          s.my_sys,
+          env.wrapper(s.my_sys, "systray"),
           spr_right,
           calendar_icon,
           env.wrapper(textdate.widget, "texttime",textdate.buttons),

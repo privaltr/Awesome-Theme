@@ -10,8 +10,8 @@ local naughty = require("naughty")
 local redflat = require("redflat")
 -- Load the widget.
 
+local newflat = require("newflat")
 
-local newflat         = require("newflat")
 -- Initialize tables and vars for module
 -----------------------------------------------------------------------------------------------------------------------
 local hotkeys = { mouse = {}, raw = {}, keys = {}, fake = {} }
@@ -20,7 +20,7 @@ local hotkeys = { mouse = {}, raw = {}, keys = {}, fake = {} }
 local appswitcher = redflat.float.appswitcher
 local current = redflat.widget.tasklist.filter.currenttags
 local allscr = redflat.widget.tasklist.filter.allscreen
-local laybox = redflat.widget.layoutbox
+local laybox = newflat.widget.layoutbox
 local redtip = redflat.float.hotkeys
 local laycom = redflat.layout.common
 local redtitle = redflat.titlebar
@@ -97,7 +97,7 @@ local function client_numkey(i, mod, action)
 end
 
 local brightness = function(arg)
-	redflat.float.brightness:change_with_xbacklight(arg)
+	newflat.float.brightness:change_with_xbacklight(arg)
 end
 
 -- Build hotkeys depended on config parameters

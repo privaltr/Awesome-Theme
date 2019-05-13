@@ -6,7 +6,7 @@ local naughty = require('naughty')
 local keygrabber = require('awful.keygrabber')
 
 -- Appearance
-local icon_size = beautiful.exit_screen_icon_size or 140
+local icon_size = beautiful.exitscreen.exit_screen_icon_size or 140
 
 
 
@@ -116,7 +116,7 @@ function reboot_command()
   awful.keygrabber.stop(exit_screen_grabber)
 end
 
-local poweroff = buildButton(beautiful.power, 'Shutdown')
+local poweroff = buildButton(beautiful.exitscreen.power, 'Shutdown')
 poweroff:connect_signal(
   'button::release',
   function()
@@ -124,7 +124,7 @@ poweroff:connect_signal(
   end
 )
 
-local reboot = buildButton(beautiful.restart, 'Restart')
+local reboot = buildButton(beautiful.exitscreen.restart, 'Restart')
 reboot:connect_signal(
   'button::release',
   function()
@@ -132,7 +132,7 @@ reboot:connect_signal(
   end
 )
 
-local suspend = buildButton(beautiful.suspend, 'Suspend')
+local suspend = buildButton(beautiful.exitscreen.suspend, 'Suspend')
 suspend:connect_signal(
   'button::release',
   function()
@@ -140,7 +140,7 @@ suspend:connect_signal(
   end
 )
 
-local hibernate = buildButton(beautiful.hibernate, 'Hibernate')
+local hibernate = buildButton(beautiful.exitscreen.hibernate, 'Hibernate')
 hibernate:connect_signal(
   'button::release',
   function()
@@ -148,7 +148,7 @@ hibernate:connect_signal(
   end
 )
 
-local exit = buildButton(beautiful.logout, 'Logout')
+local exit = buildButton(beautiful.exitscreen.logout, 'Logout')
 exit:connect_signal(
   'button::release',
   function()
@@ -156,7 +156,7 @@ exit:connect_signal(
   end
 )
 
-local lock = buildButton(beautiful.lock, 'Lock')
+local lock = buildButton(beautiful.exitscreen.lock, 'Lock')
 lock:connect_signal(
   'button::release',
   function()
@@ -181,7 +181,7 @@ exit_screen =
   }
 )
 
-exit_screen.bg = beautiful.background_hue_800
+exit_screen.bg = beautiful.exitscreen.background_hue_800
 exit_screen.fg = beautiful.exit_screen_fg or beautiful.wibar_fg or '#FEFEFE'
 
 local exit_screen_grabber

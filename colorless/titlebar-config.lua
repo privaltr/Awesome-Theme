@@ -141,7 +141,7 @@ function titlebar:init()
 							awful.mouse.client.resize(c)
 				end)
 		 )
-     awful.titlebar(c, {size = 26, fg_normal = beautiful.titlebar_fg_normal, fg_focus = beautiful.titlebar_fg_focus}) : setup {
+     awful.titlebar(c, {size = 26, fg_normal = beautiful.color.titlebar_fg_normal, fg_focus = beautiful.color.text}) : setup {
         { -- Left
            awful.titlebar.widget.stickybutton   (c),
            awful.titlebar.widget.ontopbutton    (c),
