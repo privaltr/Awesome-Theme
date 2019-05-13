@@ -5,7 +5,7 @@ Personal AwesomeWM config and Rice
 
 | Tiled         | Rofi         | Exit screen   |
 |:-------------:|:-------------:|:-------------:|
-|![](tiled.png)|![](rofi.png)|![](exitscreen.png)|
+|![](https://raw.githubusercontent.com/RJMVisser/Arch-Rice/master/tiled.png)|![](https://raw.githubusercontent.com/RJMVisser/Arch-Rice/master/rofi.png)|![](https://raw.githubusercontent.com/RJMVisser/Arch-Rice/master/exitscreen.png)|
     
 Table of contents
 =================
