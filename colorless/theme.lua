@@ -480,6 +480,13 @@ function theme:init()
 	--------------------------------------------------------------------------------
 	self.float = { decoration = {} }
 
+
+	-- Volume control
+	------------------------------------------------------------
+	self.float.volume = {
+		notify = { icon = theme.path .. "/icons/widget/audio.svg"} -- redflat notify style (see theme.float.notify)
+	}
+
 	-- Brightness control
 	------------------------------------------------------------
 	self.float.brightness = {

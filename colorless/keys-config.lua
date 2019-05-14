@@ -96,6 +96,12 @@ local function client_numkey(i, mod, action)
 	)
 end
 
+-- volume functions
+local volume_raise = function() newflat.float.pactl:increase_with_pactl({ step = 5 }) end
+local volume_lower = function() newflat.float.pactl:decrease_with_pactl({ step = 5 }) end
+local volume_mute  = function() newflat.float.pactl:toggle_with_pactl(arg) end
+
+-- brightness functions
 local brightness = function(arg)
 	newflat.float.brightness:change_with_xbacklight(arg)
 end
@@ -337,17 +343,17 @@ function hotkeys:init(args)
 							{ description = "focus the next screen", group = "screen"},
 		},
 		{
-			{}, "XF86AudioRaiseVolume", function() redflat.widget.pulse:change_volume() end,
+			{}, "XF86AudioRaiseVolume", volume_raise,
           		{ description = "Raise audio volume", group = "Audio"},
 		},
 
 		{
-			{}, "XF86AudioLowerVolume", function() redflat.widget.pulse:change_volume({ down = true }) end,
+			{}, "XF86AudioLowerVolume", volume_lower,
           		{ description = "Lower audio volume", group = "Audio"},
 		},
 
 		{
-			{}, "XF86AudioMute", function() redflat.widget.pulse:mute()                         end,
+			{}, "XF86AudioMute", volume_mute,
           		{ description = "Mute audio volume", group = "Audio"},
 		},
 		{

@@ -14,8 +14,8 @@ local timer = require("gears.timer")
 
 local redutil = require("redflat.util")
 local svgbox = require("redflat.gauge.svgbox")
-local progressbar = require("redflat.gauge.graph.bar")
-
+local progressbar = require("newflat.gauge.graph.bar")
+local awful = require("awful")
 -- Initialize tables for module
 -----------------------------------------------------------------------------------------------------------------------
 local notify = { last = {} }
@@ -54,7 +54,10 @@ function notify:init()
 	--------------------------------------------------------------------------------
 	local area = wibox.layout.align.horizontal()
 
+
 	local bar = progressbar(style.progressbar)
+
+
 	local image = svgbox()
 	local text = wibox.widget.textbox("100%")
 	text:set_align("center")
@@ -85,6 +88,12 @@ function notify:init()
 		args = args or {}
 		align_vertical:reset()
 
+		if args.red then
+			bar = progressbar(style.progressbar, true)
+			args.icon = awful.util.get_configuration_dir() .. "colorless/icons/widget/mute.svg"
+		else
+			bar = progressbar(style.progressbar, false)
+		end
 
 			--align_vertical:set_top(text)
                         --align_vertical:set_middle(bar)
@@ -125,7 +134,7 @@ end
 -- Show notify widget
 -----------------------------------------------------------------------------------------------------------------------
 function notify:show(args)
-	if not self.wibox then self:init() end
+	if not self.wibox then self:init(args) end
 	self:set(args)
 
 	if not self.wibox.visible or mouse.screen.index ~= self.last.screen then
