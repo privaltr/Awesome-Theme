@@ -24,6 +24,7 @@ function autostart.run()
 	awful.spawn.with_shell("kdeconnect-indicator")
     awful.spawn.with_shell("sleep 3 && birdtray")
 	awful.spawn.with_shell("simplescreenrecorder --start-hidden")
+    awful.spawn.with_shell("octopi-notifier")
 
 	awful.spawn.with_shell("synclient MinSpeed=1.3")
 	awful.spawn.with_shell("synclient TapButton1=1")
