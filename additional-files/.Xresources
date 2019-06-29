@@ -1,0 +1,160 @@
+!    ░█  █░                                                               
+!     ▓▒▒▓   █▒██▒  ███   ▒███▒   ███   █   █   █▒██▒  ▓██▒   ███   ▒███▒ 
+!      ██    ██  █ ▓▓ ▒█  █▒ ░█  █▓ ▓█  █   █   ██  █ ▓█  ▓  ▓▓ ▒█  █▒ ░█ 
+!      ██    █     █   █  █▒░    █   █  █   █   █     █░     █   █  █▒░   
+!     ▒██░   █     █████  ░███▒  █   █  █   █   █     █      █████  ░███▒ 
+!     █▒▒█   █     █         ▒█  █   █  █   █   █     █░     █         ▒█ 
+!    ▒█  █░  █     ▓▓  █  █░ ▒█  █▓ ▓█  █▒ ▓█   █     ▓█  ▓  ▓▓  █  █░ ▒█ 
+!    █▒  ▒█  █      ███▒  ▒███▒   ███   ▒██▒█   █      ▓██▒   ███▒  ▒███▒                                                                       
+                                                                      
+
+!-----------------------------------------------------------------------
+!                         Xft settings
+!-----------------------------------------------------------------------
+
+Xft.dpi:                96
+Xft.autohint:           0       
+Xft.antialias:          true
+Xft.rgba:               rgb
+Xft.hinting:            true
+Xft.lcdfilter:          lcddefault
+Xft.hintstyle:          hintsfull
+
+
+!-----------------------------------------------------------------------
+!                        URxvt settings 
+!-----------------------------------------------------------------------
+
+URxvt.internalBorder:    10
+URxvt.externalBorder:    0
+!URxvt.lineSpace:        0
+!urxvt*shading:          30
+! Disable for ranger image preview
+!URxvt.depth:             32
+URxvt.saveLines:         10000
+URxvt*geometry:          96x30
+URxvt*terminalName:      rxvt-unicode-256color
+URxvt*visualBell:        false
+
+!URxvt.transparent:       false
+!URxvt.shading:           80
+!URxvt*blurRadius:        8
+
+!! Scrollbar
+!URxvt.scrollStyle:      rxvt
+URxvt.scrollBar:         false
+URxvt*scrollTtyOutput:   false
+URxvt*scrollWithBuffer:  true
+URxvt*scrollTtyKeypress: true
+!! Fonts
+#define fonts xft:DejaVu Sans Mono:style=Regular:pixelsize=14
+!          xft:Material Icons:size=7,\
+!          xft:Font Awesome 5 Free:size=7,\
+!          xft:i3fonticon:size=7\
+
+URxvt*font:              fonts
+URxvt*boldMode:          true
+URxvt*boldFont:          fonts
+URxvt.letterSpace:       true
+
+!! Keybinding
+URxvt.font-size.step: 	 4
+URxvt.keysym.C-Up:       perl:font-size:increase
+URxvt.keysym.C-Down:     perl:font-size:decrease
+URxvt.keysym.C-S-Up:     perl:font-size:incglobal
+URxvt.keysym.C-S-Down:   perl:font-size:decglobal
+URxvt.keysym.C-equal:    perl:font-size:reset
+!Home and End keys to jump to the beginning and end of lines
+URxvt*keysym.Home:       \033[1~
+URxvt*keysym.End:        \033[4~
+
+!! Tabs
+URxvt.tabbed.tabbar-bg:  -1
+URxvt.tabbed.tabbar-fg:  -2
+URxvt.tabbed.tab-bg:     -2
+URxvt.tabbed.tab-fg:     -1
+URxvt.tabbed.title-bg:   -1
+URxvt.tabbed.title-fg:   -2
+URxvt.tabbed.autohide:   true
+URxvt.tabbed.new-button: false
+URxvt.tabbed.title:      true
+
+!! Perl extensions
+! url-select (part of urxvt-perls package)
+URxvt.perl-ext-common:      default,clipboard,matcher,font-size,keyboard-select
+URxvt.keysym.M-u: perl:     url-select:select_next
+URxvt.url-select.autocopy:  true
+URxvt.url-select.button:    2
+URxvt.url-select.underline: true
+URxvt.url-launcher:         /usr/bin/firefox
+URxvt.matcher.button:       1
+
+!! CopyPaste Keys
+!URxvt.keysym.Shift-Control-V:   perl:clipboard:paste
+!URxvt.keysym.Shift-Control-C:   perl:clipboard:copy
+URxvt.keysym.Shift-Control-V: eval:paste_clipboard
+URxvt.keysym.Shift-Control-C: eval:selection_to_clipboard
+
+!! Move in command line
+URxvt.keysym.Control-Left:   \033[1;5D
+URxvt.keysym.Control-Right:  \033[1;5C
+
+!! Disable the stupid ctrl+shift 'feature'
+URxvt.iso14755:            false
+URxvt.iso14755_52:         false
+
+!! Cursor
+!Xcursor.theme:             Numix
+!Xcursor.size: 16
+
+!! Colors
+! special colors
+!*.foreground:  #ebdbb2
+!*.background:  #282828
+!!*background: rgba:0000/0000/0200/c800
+!!*.cursorColor:  #aaaaaa
+!! black
+!*.color0:      #282828
+!*.color8:      #928374
+!! red
+!*.color1:      #cc241d
+!*.color9:      #fb4934
+!! green
+!*.color2:      #98971a
+!*.color10:     #b8bb26
+!! yellow
+!*.color3:      #d79921
+!*.color11:     #fabd2f
+!! blue
+!*.color4:      #458588
+!*.color12:     #83a598
+!! magenta
+!*.color5:      #b16286
+!*.color13:     #d3869b
+!! cyan
+!*.color6:      #689d6a
+!*.color14:     #8ec07c
+!! white
+!*.color7:      #a89984
+!*.color15:     #ebdbb2
+
+
+*.background:   #242424
+*.foreground:   #ebece6
+*.cursorColor:   #e4e4e4
+*.color0:   #000
+*.color1:   #fb4245
+*.color2:   #50fa7b
+*.color3:   #f0fa8b
+*.color4:   #49b9fe
+*.color5:   #fb4cb3
+*.color6:   #8be9fd
+*.color7:   #ededec
+*.color8:   #555555
+*.color9:   #fb4245
+*.color10:   #50fa7b
+*.color11:   #f0fa8b
+*.color12:   #49b9fe
+*.color13:   #fb4cb3
+*.color14:   #8be9fd
+*.color15:   #ededec
