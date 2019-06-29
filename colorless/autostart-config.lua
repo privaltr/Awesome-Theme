@@ -13,7 +13,7 @@ local autostart = {}
 --------------------------------------------------------------------------------
 function autostart.run()
 	-- utils
-	awful.spawn.with_shell("compton --config /home/rjmvisser/.config/compton/compton.conf")
+	awful.spawn.with_shell("compton --config /home/rjmvisser/.config/awesome/colorless/compton/compton.conf")
 	awful.spawn.with_shell("xbindkeys -p")
 	awful.spawn.with_shell("start-pulseaudio-x11")
 	awful.spawn.with_shell("pa-applet")
